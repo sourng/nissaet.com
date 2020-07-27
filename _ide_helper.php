@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.28 on 2020-05-12 10:08:58.
+ * Generated for Laravel 5.7.28 on 2020-07-26 17:38:57.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -18098,529 +18098,6 @@ namespace Arcanedev\NoCaptcha\Facades {
  
 }
 
-namespace DaveJamesMiller\Breadcrumbs\Facades { 
-
-    /**
-     * Breadcrumbs facade - allows easy access to the Manager instance.
-     *
-     * @see BreadcrumbsManager
-     */ 
-    class Breadcrumbs {
-        
-        /**
-         * Register a breadcrumb-generating callback for a page.
-         *
-         * @param string $name The name of the page.
-         * @param callable $callback The callback, which should accept a Generator instance as the first parameter and may
-         *     accept additional parameters.
-         * @return void 
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\DuplicateBreadcrumbException If the given name has already been
-         *     used.
-         * @static 
-         */ 
-        public static function for($name, $callback)
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        $instance->for($name, $callback);
-        }
-        
-        /**
-         * Register a breadcrumb-generating callback for a page.
-         * 
-         * For backwards-compatibility with v5.0.0 and below.
-         *
-         * @see self::for()
-         * @param string $name The name of the page.
-         * @param callable $callback The callback, which should accept a Generator instance as the first parameter and may
-         *     accept additional parameters.
-         * @return void 
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\DuplicateBreadcrumbException If the given name has already been
-         *     used.
-         * @static 
-         */ 
-        public static function register($name, $callback)
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        $instance->register($name, $callback);
-        }
-        
-        /**
-         * Register a closure to call before generating breadcrumbs for the current page.
-         * 
-         * For example, this can be used to always prepend the homepage without needing to manually add it to each page.
-         *
-         * @param callable $callback The callback, which should accept a Generator instance as the first and only parameter.
-         * @return void 
-         * @static 
-         */ 
-        public static function before($callback)
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        $instance->before($callback);
-        }
-        
-        /**
-         * Register a closure to call after generating breadcrumbs for the current page.
-         * 
-         * For example, this can be used to append the current page number when using pagination.
-         *
-         * @param callable $callback The callback, which should accept a Generator instance as the first and only parameter.
-         * @return void 
-         * @static 
-         */ 
-        public static function after($callback)
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        $instance->after($callback);
-        }
-        
-        /**
-         * Check if a breadcrumb with the given name exists.
-         * 
-         * If no name is given, defaults to the current route name.
-         *
-         * @param string|null $name The page name.
-         * @return bool Whether there is a registered callback with that name.
-         * @static 
-         */ 
-        public static function exists($name = null)
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        return $instance->exists($name);
-        }
-        
-        /**
-         * Generate a set of breadcrumbs for a page.
-         *
-         * @param string|null $name The name of the current page.
-         * @param mixed $params The parameters to pass to the closure for the current page.
-         * @return \Illuminate\Support\Collection The generated breadcrumbs.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\UnnamedRouteException if no name is given and the current route
-         *     doesn't have an associated name.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\InvalidBreadcrumbException if the name is (or any ancestor names
-         *     are) not registered.
-         * @static 
-         */ 
-        public static function generate($name = null, $params = null)
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        return $instance->generate($name, $params);
-        }
-        
-        /**
-         * Render breadcrumbs for a page with the specified view.
-         *
-         * @param string $view The name of the view to render.
-         * @param string|null $name The name of the current page.
-         * @param mixed $params The parameters to pass to the closure for the current page.
-         * @return \Illuminate\Support\HtmlString The generated HTML.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\InvalidBreadcrumbException if the name is (or any ancestor names are) not registered.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\UnnamedRouteException if no name is given and the current route doesn't have an associated name.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\ViewNotSetException if no view has been set.
-         * @static 
-         */ 
-        public static function view($view, $name = null, $params = null)
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        return $instance->view($view, $name, $params);
-        }
-        
-        /**
-         * Render breadcrumbs for a page with the default view.
-         *
-         * @param string|null $name The name of the current page.
-         * @param mixed $params The parameters to pass to the closure for the current page.
-         * @return \Illuminate\Support\HtmlString The generated HTML.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\InvalidBreadcrumbException if the name is (or any ancestor names are) not registered.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\UnnamedRouteException if no name is given and the current route doesn't have an associated name.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\ViewNotSetException if no view has been set.
-         * @static 
-         */ 
-        public static function render($name = null, $params = null)
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        return $instance->render($name, $params);
-        }
-        
-        /**
-         * Get the last breadcrumb for the current page.
-         * 
-         * Optionally pass a
-         *
-         * @return \stdClass|null The breadcrumb for the current page.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\UnnamedRouteException if the current route doesn't have an associated name.
-         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\InvalidBreadcrumbException if the name is (or any ancestor names are) not registered.
-         * @static 
-         */ 
-        public static function current()
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        return $instance->current();
-        }
-        
-        /**
-         * Set the current route name and parameters to use when calling render() or generate() with no parameters.
-         *
-         * @param string $name The name of the current page.
-         * @param mixed $params The parameters to pass to the closure for the current page.
-         * @return void 
-         * @static 
-         */ 
-        public static function setCurrentRoute($name, $params = null)
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        $instance->setCurrentRoute($name, $params);
-        }
-        
-        /**
-         * Clear the previously set route name and parameters to use when calling render() or generate() with no parameters.
-         * 
-         * Next time it will revert to the default behaviour of using the current route from Laravel.
-         *
-         * @return void 
-         * @static 
-         */ 
-        public static function clearCurrentRoute()
-        {
-                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
-                        $instance->clearCurrentRoute();
-        }
-        
-        /**
-         * Register a custom macro.
-         *
-         * @param string $name
-         * @param object|callable $macro
-         * @return void 
-         * @static 
-         */ 
-        public static function macro($name, $macro)
-        {
-                        \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::macro($name, $macro);
-        }
-        
-        /**
-         * Mix another object into the class.
-         *
-         * @param object $mixin
-         * @return void 
-         * @throws \ReflectionException
-         * @static 
-         */ 
-        public static function mixin($mixin)
-        {
-                        \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::mixin($mixin);
-        }
-        
-        /**
-         * Checks if macro is registered.
-         *
-         * @param string $name
-         * @return bool 
-         * @static 
-         */ 
-        public static function hasMacro($name)
-        {
-                        return \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::hasMacro($name);
-        }
-         
-    }
- 
-}
-
-namespace Torann\GeoIP\Facades { 
-
-    /**
-     * 
-     *
-     */ 
-    class GeoIP {
-        
-        /**
-         * Get the location from the provided IP.
-         *
-         * @param string $ip
-         * @return \Torann\GeoIP\Location 
-         * @static 
-         */ 
-        public static function getLocation($ip = null)
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getLocation($ip);
-        }
-        
-        /**
-         * Get the currency code from ISO.
-         *
-         * @param string $iso
-         * @return string 
-         * @static 
-         */ 
-        public static function getCurrency($iso)
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getCurrency($iso);
-        }
-        
-        /**
-         * Get service instance.
-         *
-         * @return \Torann\GeoIP\Contracts\ServiceInterface 
-         * @throws Exception
-         * @static 
-         */ 
-        public static function getService()
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getService();
-        }
-        
-        /**
-         * Get cache instance.
-         *
-         * @return \Torann\GeoIP\Cache 
-         * @static 
-         */ 
-        public static function getCache()
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getCache();
-        }
-        
-        /**
-         * Get the client IP address.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getClientIP()
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getClientIP();
-        }
-        
-        /**
-         * Get configuration value.
-         *
-         * @param string $key
-         * @param mixed $default
-         * @return mixed 
-         * @static 
-         */ 
-        public static function config($key, $default = null)
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->config($key, $default);
-        }
-         
-    }
- 
-}
-
-namespace Webpatser\Uuid { 
-
-    /**
-     * Class Uuid
-     *
-     * @package Webpatser\Uuid
-     * @property string $bytes
-     * @property string $hex
-     * @property string $node
-     * @property string $string
-     * @property string $time
-     * @property string $urn
-     * @property string $variant
-     * @property string $version
-     */ 
-    class Uuid {
-         
-    }
- 
-}
-
-namespace Yajra\DataTables\Facades { 
-
-    /**
-     * 
-     *
-     * @mixin \Yajra\DataTables\DataTables
-     * @see \Yajra\DataTables\DataTables
-     */ 
-    class DataTables {
-        
-        /**
-         * Make a DataTable instance from source.
-         * 
-         * Alias of make for backward compatibility.
-         *
-         * @param mixed $source
-         * @return mixed 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function of($source)
-        {
-                        return \Yajra\DataTables\DataTables::of($source);
-        }
-        
-        /**
-         * Make a DataTable instance from source.
-         *
-         * @param mixed $source
-         * @return mixed 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function make($source)
-        {
-                        return \Yajra\DataTables\DataTables::make($source);
-        }
-        
-        /**
-         * Get request object.
-         *
-         * @return \Yajra\DataTables\Utilities\Request 
-         * @static 
-         */ 
-        public static function getRequest()
-        {
-                        /** @var \Yajra\DataTables\DataTables $instance */
-                        return $instance->getRequest();
-        }
-        
-        /**
-         * Get config instance.
-         *
-         * @return \Yajra\DataTables\Utilities\Config 
-         * @static 
-         */ 
-        public static function getConfig()
-        {
-                        /** @var \Yajra\DataTables\DataTables $instance */
-                        return $instance->getConfig();
-        }
-        
-        /**
-         * 
-         *
-         * @deprecated Please use query() instead, this method will be removed in a next version.
-         * @param $builder
-         * @return \Yajra\DataTables\QueryDataTable 
-         * @static 
-         */ 
-        public static function queryBuilder($builder)
-        {
-                        /** @var \Yajra\DataTables\DataTables $instance */
-                        return $instance->queryBuilder($builder);
-        }
-        
-        /**
-         * DataTables using Query.
-         *
-         * @param \Illuminate\Database\Query\Builder|mixed $builder
-         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\QueryDataTable 
-         * @static 
-         */ 
-        public static function query($builder)
-        {
-                        /** @var \Yajra\DataTables\DataTables $instance */
-                        return $instance->query($builder);
-        }
-        
-        /**
-         * DataTables using Eloquent Builder.
-         *
-         * @param \Illuminate\Database\Eloquent\Builder|mixed $builder
-         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\EloquentDataTable 
-         * @static 
-         */ 
-        public static function eloquent($builder)
-        {
-                        /** @var \Yajra\DataTables\DataTables $instance */
-                        return $instance->eloquent($builder);
-        }
-        
-        /**
-         * DataTables using Collection.
-         *
-         * @param \Illuminate\Support\Collection|array $collection
-         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\CollectionDataTable 
-         * @static 
-         */ 
-        public static function collection($collection)
-        {
-                        /** @var \Yajra\DataTables\DataTables $instance */
-                        return $instance->collection($collection);
-        }
-        
-        /**
-         * DataTables using Collection.
-         *
-         * @param \Illuminate\Http\Resources\Json\AnonymousResourceCollection|array $collection
-         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\ApiResourceDataTable 
-         * @static 
-         */ 
-        public static function resource($resource)
-        {
-                        /** @var \Yajra\DataTables\DataTables $instance */
-                        return $instance->resource($resource);
-        }
-        
-        /**
-         * Get html builder instance.
-         *
-         * @return \Yajra\DataTables\Html\Builder 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function getHtmlBuilder()
-        {
-                        /** @var \Yajra\DataTables\DataTables $instance */
-                        return $instance->getHtmlBuilder();
-        }
-        
-        /**
-         * Register a custom macro.
-         *
-         * @param string $name
-         * @param object|callable $macro
-         * @return void 
-         * @static 
-         */ 
-        public static function macro($name, $macro)
-        {
-                        \Yajra\DataTables\DataTables::macro($name, $macro);
-        }
-        
-        /**
-         * Mix another object into the class.
-         *
-         * @param object $mixin
-         * @return void 
-         * @throws \ReflectionException
-         * @static 
-         */ 
-        public static function mixin($mixin)
-        {
-                        \Yajra\DataTables\DataTables::mixin($mixin);
-        }
-        
-        /**
-         * Checks if macro is registered.
-         *
-         * @param string $name
-         * @return bool 
-         * @static 
-         */ 
-        public static function hasMacro($name)
-        {
-                        return \Yajra\DataTables\DataTables::hasMacro($name);
-        }
-         
-    }
- 
-}
-
 namespace Barryvdh\Debugbar { 
 
     /**
@@ -19221,6 +18698,529 @@ namespace Barryvdh\Debugbar {
             //Method inherited from \DebugBar\DebugBar            
                         /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
                         return $instance->offsetUnset($key);
+        }
+         
+    }
+ 
+}
+
+namespace DaveJamesMiller\Breadcrumbs\Facades { 
+
+    /**
+     * Breadcrumbs facade - allows easy access to the Manager instance.
+     *
+     * @see BreadcrumbsManager
+     */ 
+    class Breadcrumbs {
+        
+        /**
+         * Register a breadcrumb-generating callback for a page.
+         *
+         * @param string $name The name of the page.
+         * @param callable $callback The callback, which should accept a Generator instance as the first parameter and may
+         *     accept additional parameters.
+         * @return void 
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\DuplicateBreadcrumbException If the given name has already been
+         *     used.
+         * @static 
+         */ 
+        public static function for($name, $callback)
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        $instance->for($name, $callback);
+        }
+        
+        /**
+         * Register a breadcrumb-generating callback for a page.
+         * 
+         * For backwards-compatibility with v5.0.0 and below.
+         *
+         * @see self::for()
+         * @param string $name The name of the page.
+         * @param callable $callback The callback, which should accept a Generator instance as the first parameter and may
+         *     accept additional parameters.
+         * @return void 
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\DuplicateBreadcrumbException If the given name has already been
+         *     used.
+         * @static 
+         */ 
+        public static function register($name, $callback)
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        $instance->register($name, $callback);
+        }
+        
+        /**
+         * Register a closure to call before generating breadcrumbs for the current page.
+         * 
+         * For example, this can be used to always prepend the homepage without needing to manually add it to each page.
+         *
+         * @param callable $callback The callback, which should accept a Generator instance as the first and only parameter.
+         * @return void 
+         * @static 
+         */ 
+        public static function before($callback)
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        $instance->before($callback);
+        }
+        
+        /**
+         * Register a closure to call after generating breadcrumbs for the current page.
+         * 
+         * For example, this can be used to append the current page number when using pagination.
+         *
+         * @param callable $callback The callback, which should accept a Generator instance as the first and only parameter.
+         * @return void 
+         * @static 
+         */ 
+        public static function after($callback)
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        $instance->after($callback);
+        }
+        
+        /**
+         * Check if a breadcrumb with the given name exists.
+         * 
+         * If no name is given, defaults to the current route name.
+         *
+         * @param string|null $name The page name.
+         * @return bool Whether there is a registered callback with that name.
+         * @static 
+         */ 
+        public static function exists($name = null)
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        return $instance->exists($name);
+        }
+        
+        /**
+         * Generate a set of breadcrumbs for a page.
+         *
+         * @param string|null $name The name of the current page.
+         * @param mixed $params The parameters to pass to the closure for the current page.
+         * @return \Illuminate\Support\Collection The generated breadcrumbs.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\UnnamedRouteException if no name is given and the current route
+         *     doesn't have an associated name.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\InvalidBreadcrumbException if the name is (or any ancestor names
+         *     are) not registered.
+         * @static 
+         */ 
+        public static function generate($name = null, $params = null)
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        return $instance->generate($name, $params);
+        }
+        
+        /**
+         * Render breadcrumbs for a page with the specified view.
+         *
+         * @param string $view The name of the view to render.
+         * @param string|null $name The name of the current page.
+         * @param mixed $params The parameters to pass to the closure for the current page.
+         * @return \Illuminate\Support\HtmlString The generated HTML.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\InvalidBreadcrumbException if the name is (or any ancestor names are) not registered.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\UnnamedRouteException if no name is given and the current route doesn't have an associated name.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\ViewNotSetException if no view has been set.
+         * @static 
+         */ 
+        public static function view($view, $name = null, $params = null)
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        return $instance->view($view, $name, $params);
+        }
+        
+        /**
+         * Render breadcrumbs for a page with the default view.
+         *
+         * @param string|null $name The name of the current page.
+         * @param mixed $params The parameters to pass to the closure for the current page.
+         * @return \Illuminate\Support\HtmlString The generated HTML.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\InvalidBreadcrumbException if the name is (or any ancestor names are) not registered.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\UnnamedRouteException if no name is given and the current route doesn't have an associated name.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\ViewNotSetException if no view has been set.
+         * @static 
+         */ 
+        public static function render($name = null, $params = null)
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        return $instance->render($name, $params);
+        }
+        
+        /**
+         * Get the last breadcrumb for the current page.
+         * 
+         * Optionally pass a
+         *
+         * @return \stdClass|null The breadcrumb for the current page.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\UnnamedRouteException if the current route doesn't have an associated name.
+         * @throws \DaveJamesMiller\Breadcrumbs\Exceptions\InvalidBreadcrumbException if the name is (or any ancestor names are) not registered.
+         * @static 
+         */ 
+        public static function current()
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        return $instance->current();
+        }
+        
+        /**
+         * Set the current route name and parameters to use when calling render() or generate() with no parameters.
+         *
+         * @param string $name The name of the current page.
+         * @param mixed $params The parameters to pass to the closure for the current page.
+         * @return void 
+         * @static 
+         */ 
+        public static function setCurrentRoute($name, $params = null)
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        $instance->setCurrentRoute($name, $params);
+        }
+        
+        /**
+         * Clear the previously set route name and parameters to use when calling render() or generate() with no parameters.
+         * 
+         * Next time it will revert to the default behaviour of using the current route from Laravel.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function clearCurrentRoute()
+        {
+                        /** @var \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager $instance */
+                        $instance->clearCurrentRoute();
+        }
+        
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @return void 
+         * @static 
+         */ 
+        public static function macro($name, $macro)
+        {
+                        \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::macro($name, $macro);
+        }
+        
+        /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @return void 
+         * @throws \ReflectionException
+         * @static 
+         */ 
+        public static function mixin($mixin)
+        {
+                        \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::mixin($mixin);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasMacro($name)
+        {
+                        return \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::hasMacro($name);
+        }
+         
+    }
+ 
+}
+
+namespace Torann\GeoIP\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class GeoIP {
+        
+        /**
+         * Get the location from the provided IP.
+         *
+         * @param string $ip
+         * @return \Torann\GeoIP\Location 
+         * @static 
+         */ 
+        public static function getLocation($ip = null)
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getLocation($ip);
+        }
+        
+        /**
+         * Get the currency code from ISO.
+         *
+         * @param string $iso
+         * @return string 
+         * @static 
+         */ 
+        public static function getCurrency($iso)
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getCurrency($iso);
+        }
+        
+        /**
+         * Get service instance.
+         *
+         * @return \Torann\GeoIP\Contracts\ServiceInterface 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function getService()
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getService();
+        }
+        
+        /**
+         * Get cache instance.
+         *
+         * @return \Torann\GeoIP\Cache 
+         * @static 
+         */ 
+        public static function getCache()
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getCache();
+        }
+        
+        /**
+         * Get the client IP address.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getClientIP()
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getClientIP();
+        }
+        
+        /**
+         * Get configuration value.
+         *
+         * @param string $key
+         * @param mixed $default
+         * @return mixed 
+         * @static 
+         */ 
+        public static function config($key, $default = null)
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->config($key, $default);
+        }
+         
+    }
+ 
+}
+
+namespace Webpatser\Uuid { 
+
+    /**
+     * Class Uuid
+     *
+     * @package Webpatser\Uuid
+     * @property string $bytes
+     * @property string $hex
+     * @property string $node
+     * @property string $string
+     * @property string $time
+     * @property string $urn
+     * @property string $variant
+     * @property string $version
+     */ 
+    class Uuid {
+         
+    }
+ 
+}
+
+namespace Yajra\DataTables\Facades { 
+
+    /**
+     * 
+     *
+     * @mixin \Yajra\DataTables\DataTables
+     * @see \Yajra\DataTables\DataTables
+     */ 
+    class DataTables {
+        
+        /**
+         * Make a DataTable instance from source.
+         * 
+         * Alias of make for backward compatibility.
+         *
+         * @param mixed $source
+         * @return mixed 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function of($source)
+        {
+                        return \Yajra\DataTables\DataTables::of($source);
+        }
+        
+        /**
+         * Make a DataTable instance from source.
+         *
+         * @param mixed $source
+         * @return mixed 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function make($source)
+        {
+                        return \Yajra\DataTables\DataTables::make($source);
+        }
+        
+        /**
+         * Get request object.
+         *
+         * @return \Yajra\DataTables\Utilities\Request 
+         * @static 
+         */ 
+        public static function getRequest()
+        {
+                        /** @var \Yajra\DataTables\DataTables $instance */
+                        return $instance->getRequest();
+        }
+        
+        /**
+         * Get config instance.
+         *
+         * @return \Yajra\DataTables\Utilities\Config 
+         * @static 
+         */ 
+        public static function getConfig()
+        {
+                        /** @var \Yajra\DataTables\DataTables $instance */
+                        return $instance->getConfig();
+        }
+        
+        /**
+         * 
+         *
+         * @deprecated Please use query() instead, this method will be removed in a next version.
+         * @param $builder
+         * @return \Yajra\DataTables\QueryDataTable 
+         * @static 
+         */ 
+        public static function queryBuilder($builder)
+        {
+                        /** @var \Yajra\DataTables\DataTables $instance */
+                        return $instance->queryBuilder($builder);
+        }
+        
+        /**
+         * DataTables using Query.
+         *
+         * @param \Illuminate\Database\Query\Builder|mixed $builder
+         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\QueryDataTable 
+         * @static 
+         */ 
+        public static function query($builder)
+        {
+                        /** @var \Yajra\DataTables\DataTables $instance */
+                        return $instance->query($builder);
+        }
+        
+        /**
+         * DataTables using Eloquent Builder.
+         *
+         * @param \Illuminate\Database\Eloquent\Builder|mixed $builder
+         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\EloquentDataTable 
+         * @static 
+         */ 
+        public static function eloquent($builder)
+        {
+                        /** @var \Yajra\DataTables\DataTables $instance */
+                        return $instance->eloquent($builder);
+        }
+        
+        /**
+         * DataTables using Collection.
+         *
+         * @param \Illuminate\Support\Collection|array $collection
+         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\CollectionDataTable 
+         * @static 
+         */ 
+        public static function collection($collection)
+        {
+                        /** @var \Yajra\DataTables\DataTables $instance */
+                        return $instance->collection($collection);
+        }
+        
+        /**
+         * DataTables using Collection.
+         *
+         * @param \Illuminate\Http\Resources\Json\AnonymousResourceCollection|array $collection
+         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\ApiResourceDataTable 
+         * @static 
+         */ 
+        public static function resource($resource)
+        {
+                        /** @var \Yajra\DataTables\DataTables $instance */
+                        return $instance->resource($resource);
+        }
+        
+        /**
+         * Get html builder instance.
+         *
+         * @return \Yajra\DataTables\Html\Builder 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function getHtmlBuilder()
+        {
+                        /** @var \Yajra\DataTables\DataTables $instance */
+                        return $instance->getHtmlBuilder();
+        }
+        
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @return void 
+         * @static 
+         */ 
+        public static function macro($name, $macro)
+        {
+                        \Yajra\DataTables\DataTables::macro($name, $macro);
+        }
+        
+        /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @return void 
+         * @throws \ReflectionException
+         * @static 
+         */ 
+        public static function mixin($mixin)
+        {
+                        \Yajra\DataTables\DataTables::mixin($mixin);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasMacro($name)
+        {
+                        return \Yajra\DataTables\DataTables::hasMacro($name);
         }
          
     }
@@ -22198,6 +22198,8 @@ namespace  {
 
     class Captcha extends \Arcanedev\NoCaptcha\Facades\NoCaptcha {}
 
+    class Debugbar extends \Barryvdh\Debugbar\Facade {}
+
     class Breadcrumbs extends \DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs {}
 
     class GeoIP extends \Torann\GeoIP\Facades\GeoIP {}
@@ -22205,8 +22207,6 @@ namespace  {
     class Uuid extends \Webpatser\Uuid\Uuid {}
 
     class DataTables extends \Yajra\DataTables\Facades\DataTables {}
-
-    class Debugbar extends \Barryvdh\Debugbar\Facade {}
 
     class Purifier extends \LukeTowers\Purifier\Facades\Purifier {}
 
