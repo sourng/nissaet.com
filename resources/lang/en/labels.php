@@ -9,7 +9,6 @@ return array (
       'fields' => 
       array (
         'published' => 'Published',
-        'unpublished' => 'Not Published',
         'featured' => 'Featured',
         'free' => 'Free',
         'trending' => 'Trending',
@@ -33,6 +32,7 @@ return array (
         ),
         'course' => 'Course',
         'status' => 'Status',
+        'unpublished' => 'Not Published',
       ),
       'add_teachers' => 'Add Teachers',
       'add_categories' => 'Add Categories',
@@ -465,7 +465,6 @@ return array (
         'paypal_note' => 'Redirects to paypal for payment',
         'offline_mode' => 'Offline Payment Method',
         'offline_mode_note' => 'User gets assistance for offline payment via admin',
-        'offline_mode_instruction' => 'Enter offline payment instructions',
         'key' => 'API Key',
         'secret' => 'API Secret',
         'client_id' => 'Client ID',
@@ -480,12 +479,11 @@ return array (
         'bluesnap' => 'Bluesnap Payment Method',
         'bluesnap_note' => 'Bluesnap card form for payment',
         'how_to_bluesnap' => 'How to get Bluesnap API Credentials?',
+        'offline_mode_instruction' => 'Enter offline payment instructions',
       ),
       'management' => 'General Settings',
       'app_name' => 'App Name',
       'app_url' => 'App URL',
-      'custom_css' => 'Custom CSS',
-      'custom_js' => 'Custom JS',
       'teacher_commission_rate' => 'Teacher Commission Rate',
       'lesson_note' => 'Enable / Disable if user will be able to skip before timer is over.',
       'font_color' => 'Font Color',
@@ -551,7 +549,7 @@ return array (
       array (
         'title' => 'General',
       ),
-      'captcha' => 'Whether the registration - login - contact captcha is on or off',
+      'captcha' => 'Whether the registration - login captcha is on or off',
       'captcha_note' => 'How to get Google reCaptcha credentials?',
       'retest_note' => 'Enable / Disable if user will be able to give retest for same exam',
       'language_settings' => 
@@ -616,6 +614,8 @@ return array (
       'box' => 'Box',
       'layout_type_note' => 'This will change frontend theme layout type',
       'layout_label' => 'Layout',
+      'custom_css' => 'Custom CSS',
+      'custom_js' => 'Custom JS',
     ),
     'logo' => 
     array (
@@ -950,7 +950,6 @@ return array (
       'fields' => 
       array (
         'published' => 'Published',
-        'unpublished' => 'Not Published',
         'featured' => 'Featured',
         'trending' => 'Trending',
         'free' => 'Free',
@@ -975,6 +974,7 @@ return array (
         'course' => 'Course',
         'courses' => 'Courses',
         'status' => 'Status',
+        'unpublished' => 'Not Published',
       ),
       'add_courses' => 'Add Courses',
       'add_teachers' => 'Add Teachers',
@@ -1464,11 +1464,11 @@ return array (
     'bank_details' => 
     array (
       'name' => 'Bank Name',
-      'bank_code' => 'Bank Code',
+      'ifsc_code' => 'IFSC Code',
       'account' => 'Account Number',
       'holder_name' => 'Account Name',
       'account_number' => 'Account Number',
-      'ifsc_code' => 'IFSC Code',
+      'bank_code' => 'Bank Code',
     ),
     'description' => 'Description',
   ),

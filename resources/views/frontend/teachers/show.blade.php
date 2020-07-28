@@ -61,7 +61,9 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="teacher-details-img">
-                                    <img style="height: 100px" src="{{$teacher->picture}}" alt="">
+                                    {{-- {{asset('storage/uploads/'.$item->course_image)}} --}}
+                                    {{-- <img style="height: 100px" src="{{$teacher->picture}}" alt=""> --}}
+                                    <img style="height: 100px" src="{{asset('assets/img/teacher/mt-2.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-md-10">

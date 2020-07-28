@@ -449,8 +449,6 @@ return array (
     ),
     'general_settings' => 
     array (
-      'custom_css' => 'لغة تنسيق ويب حسب الطلب',
-      'custom_js' => 'شبيبة مخصصة',
       'app_locale' => 'لغة التطبيق',
       'app_name' => 'اسم التطبيق',
       'app_timezone' => 'التطبيق المنطقة الزمنية',
@@ -689,6 +687,8 @@ return array (
       'layout_type_note' => 'سيؤدي هذا إلى تغيير نوع تخطيط الواجهة الأمامية',
       'list_update_note' => 'بمجرد النقر فوق "تحديث" ، سترى قائمة بالأقسام لتشغيل / إيقاف.',
       'wide' => 'واسع',
+      'custom_css' => 'لغة تنسيق ويب حسب الطلب',
+      'custom_js' => 'شبيبة مخصصة',
     ),
     'invoices' => 
     array (
@@ -1260,7 +1260,7 @@ return array (
       'no_reviews_yet' => 'لا توجد تعليقات حتى الآن.',
       'none' => 'لا شيء',
       'popular' => 'جمع',
-      'prev' => 'السابق',
+      'prev' => 'PREV',
       'price' => 'السعر',
       'progress' => 'تقدم',
       'ratings' => 'تصنيفات',

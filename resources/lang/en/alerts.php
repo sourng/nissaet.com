@@ -6,7 +6,6 @@ return array (
     'general' => 
     array (
       'created' => 'Created successfully.',
-      'slug_exist' => 'Record with same slug exist, please update the slug.',
       'error' => 'Something went wrong. Try Again',
       'updated' => 'Updated successfully.',
       'deleted' => 'Deleted successfully.',
@@ -16,6 +15,7 @@ return array (
       'backup_warning' => 'Please fill necessary details for backup',
       'delete_warning' => 'You can not delete course. Students are already enrolled. Unpublish the course instead',
       'delete_warning_bundle' => 'You can not delete Bundle. Students are already enrolled. Unpublish the Bundle instead',
+      'slug_exist' => 'Record with same slug exist, please update the slug.',
       'teacher_delete_warning' => 'You can not delete teacher. Courses are already added. Change the status instead',
     ),
     'roles' => 

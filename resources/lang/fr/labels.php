@@ -381,8 +381,6 @@ return array (
       'app_name' => 'Nom de l\'application',
       'app_timezone' => 'Fuseau horaire App',
       'app_url' => 'URL de l\'application',
-      'custom_js' => 'JS personnalisé',
-      'custom_css' => 'CSS personnalisé',
       'change_email' => 'Changer l\'e-mail',
       'confirm_email' => 'Confirmez votre e-mail',
       'contact' => 
@@ -619,6 +617,8 @@ return array (
       'layout_type_note' => 'Cela changera le type de disposition du thème frontal',
       'list_update_note' => 'Une fois que vous avez cliqué sur la mise à jour, vous verrez la liste des sections à activer / désactiver.',
       'wide' => 'Large',
+      'custom_js' => 'JS personnalisé',
+      'custom_css' => 'CSS personnalisé',
     ),
     'hero_slider' => 
     array (

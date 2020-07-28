@@ -380,8 +380,6 @@ return array (
       'app_locale' => 'Localidad de la aplicación',
       'app_name' => 'Nombre de la aplicación',
       'app_timezone' => 'Zona horaria de la aplicación',
-      'custom_css' => 'CSS personalizado',
-      'custom_js' => 'JS personalizado',
       'app_url' => 'URL de la aplicación',
       'change_email' => 'Cambiar e-mail',
       'confirm_email' => 'Confirmar correo electrónico',
@@ -619,6 +617,8 @@ return array (
       'layout_type_note' => 'Esto cambiará el tipo de diseño del tema de la interfaz',
       'list_update_note' => 'Una vez que haga clic en actualizar, verá una lista de secciones para activar / desactivar.',
       'wide' => 'Amplio',
+      'custom_css' => 'CSS personalizado',
+      'custom_js' => 'JS personalizado',
     ),
     'hero_slider' => 
     array (

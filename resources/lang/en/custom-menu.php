@@ -1,4 +1,6 @@
-<?php return array (
+<?php
+
+return array (
   'nav-menu' => 
   array (
     'blog' => 'Blog',
