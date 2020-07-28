@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<psalm
-    totallyTyped="false"
->
-    <projectFiles>
-        <directory name="src" />
-    </projectFiles>
-</psalm>
